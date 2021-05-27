@@ -351,35 +351,37 @@ export class JoyStick {
     }
     const button = Object.keys(CONFIG.bindings).find((k) => CONFIG.bindings[k] === event.key);
     this.status.last = Date.now();
-    if (["green", "blue", "yellow", "red"].includes(button)) {
+    if (["green", "blue", "yellow", "red", "start", "select"].includes(button)) {
+      console.log("caca")
       this.sendCommand({ button: button, event: "down" });
       // Display button pressed
       const element = document.querySelector(`.btn-body.${button}`);
-      element.classList.add("activate");
+      element.classList.add("button-hover");
     } else {
+      console.log(button)
       switch (button) {
-        case CONFIG.bindings.stick_right:
+        case "stick_right":
           this.status.position = {
-            x: this.center.x + this.dimensions.directionLimits.HorizontalPlus,
+            x: this.center.x + this.dimensions.directionLimits.HorizontalPlus*2,
             y: this.center.y,
           };
           break;
-        case CONFIG.bindings.stick_left:
+        case  "stick_left":
           this.status.position = {
-            x: this.center.x + this.dimensions.directionLimits.HorizontalMinus,
+            x: this.center.x + this.dimensions.directionLimits.HorizontalMinus*2,
             y: this.center.y,
           };
           break;
-        case CONFIG.bindings.stick_down:
+        case "stick_down":
           this.status.position = {
             x: this.center.x,
-            y: this.center.y + this.dimensions.directionLimits.VerticalPlus,
+            y: this.center.y + this.dimensions.directionLimits.VerticalPlus*2,
           };
           break;
-        case CONFIG.bindings.stick_up:
+        case "stick_up":
           this.status.position = {
             x: this.center.x,
-            y: this.center.y + this.dimensions.directionLimits.VerticalMinus,
+            y: this.center.y + this.dimensions.directionLimits.VerticalMinus*2,
           };
           break;
         default:
@@ -397,9 +399,9 @@ export class JoyStick {
 
   onKeyRelease(event) {
     const button = Object.keys(CONFIG.bindings).find((k) => CONFIG.bindings[k] === event.key);
-    if (["green", "blue", "yellow", "red"].includes(button)) {
+    if (["green", "blue", "yellow", "red", "start", "select"].includes(button)) {
       const element = document.querySelector(`.btn-body.${button}`);
-      element.classList.remove("activate");
+      element.classList.remove("button-hover");
       if (CONFIG.button_keyrelease_event) {
         this.sendCommand({ button: button, event: "up" });
       }

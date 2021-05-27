@@ -176,6 +176,9 @@ body,html {margin: 0; height: 100%;
     cursor: pointer;
     filter: brightness(80%);
 }
-.to-press:hover {
+.to-press {
     transition: all 0.2s;
+}
+.button-hover {
+    filter: brightness(80%);
 }
