@@ -120,12 +120,18 @@ export class JoyStick {
           this.sendCommand({ button: ev.currentTarget.dataset.action, event: "down", name: person });
         }else{
           this.sendCommand({ button: ev.currentTarget.dataset.action, event: "down" });
-
         }
       });
       b.addEventListener("touchstart", (ev) => {
         ev.preventDefault();
-        this.sendCommand({ button: ev.currentTarget.dataset.action, event: "down" });
+        b.classList.add("button-hover")
+
+        if(ev.currentTarget.dataset.action == "start"){
+          this.sendCommand({ button: ev.currentTarget.dataset.action, event: "down", name: person });
+
+        }else{
+          this.sendCommand({ button: ev.currentTarget.dataset.action, event: "down" });
+        }
       });
     });
 
@@ -136,6 +142,8 @@ export class JoyStick {
       b.addEventListener("touchend", (ev) => {
         ev.preventDefault();
         this.sendCommand({ button: ev.currentTarget.dataset.action, event: "up" });
+        b.classList.remove("button-hover")
+
       });
     });
   }
