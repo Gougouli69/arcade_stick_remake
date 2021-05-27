@@ -1,0 +1,175 @@
+body,html {margin: 0; height: 100%;
+    font-family: "Anton", serif}
+
+.controller {
+    width: 400px;
+    height: 200px;
+    background: #B6B6B6;
+    display: flex;
+}
+.part-controller {
+    height: 240px;
+    width: 450px;
+    background: #B6B6B6;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center {
+    width: 70%;
+    background: #B6B6B6;
+}
+
+.controller .left {
+    margin-left: -120px;
+}
+.controller .left:before {
+    position: absolute;
+    z-index: -1;
+    margin-bottom: 15.5%;
+    height: 20px;
+    width: 105px;
+    background: #A3A3A3;
+    /*background-image: linear-gradient(top, rgba(124, 124, 124, 0.35) 0%, rgba(0, 0, 0, 0) 100%);*/
+    content: '';
+    border-top-left-radius: 50px 20px;
+    border-top-right-radius: 6px;
+    box-shadow: inset -6px -17px 5px rgba(0,0,0,0.2);
+}
+
+.controller .left .circle {
+    font-family: 'Anton', sans-serif;
+    display: flex; justify-content: center;align-items: center;
+    height: 160px;
+    width: 160px;
+    background: #b7b7b7;
+    border-radius: 50%;
+    box-shadow: inset 0 0 1px rgba(120, 120, 120, 0.6), inset 0 2px 2px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(240, 240, 240, 0.4);
+}
+.controller .right {
+    margin-right: -120px;
+}
+.controller .right:before {
+    position: absolute;
+    z-index: -1;
+    margin-bottom: 15.5%;
+    height: 20px;
+    width: 105px;
+    background: #A3A3A3;
+    /*background-image: linear-gradient(top, rgba(124, 124, 124, 0.35) 0%, rgba(0, 0, 0, 0) 100%);*/
+    content: '';
+    border-top-right-radius: 50px 20px;
+    border-top-left-radius: 6px;
+    box-shadow: inset -6px -17px 5px rgba(0,0,0,0.2);
+}
+.controller .right .circle {
+    height: 220px;
+    width: 220px;
+    background: #333333;
+    border-radius: 110px;
+    display: flex; justify-content: center;align-items: center;
+}
+.controller .right .circle .groups {
+    transform: rotate(-40deg);
+}
+
+.controller .right .circle .group {
+    background: #B6B6B6;
+    width: 120px;
+    border-radius: 25px;
+    height: 50px;
+    display: flex;justify-content: space-around;align-items: center;
+
+}
+
+.controller .right .circle .group-2 {
+    margin-top: 30px;
+}
+.controller .right .circle .group .btn {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+.btn:before, .btn:after{
+    transform: rotate(40deg);
+    display: block;
+    color: #B6B6B6;
+    font-size: 20px;
+    font-weight: bold;
+}
+.yellow {background: #E2BD00;}
+.yellow:before {
+    content: 'B';
+    margin-left: -100px;
+}
+
+.red {background: #D10202;}
+.red:after {
+    content: 'A';
+    margin-right: -100px;
+}
+
+.blue {background: #143EBC;}
+.blue:after {
+    content: 'X';
+    margin-right: -100px;
+}
+
+.green {background: #158733;}
+.green:before {
+    content: 'Y';
+    margin-left: -100px;
+}
+
+.controller .center {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.controller .center .title {
+    font-style: italic;
+    font-size: 20px;
+    color: #494949;
+}
+.controller .center .group {
+    width: 100%;
+    padding: 0 15px 20px 15px;
+    box-sizing: border-box;
+    display: flex;justify-content: space-around;
+
+}
+
+.controller .center .group .btn{
+    transform: rotate(45deg);
+    width: 12px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0 0 1px rgba(120, 120, 120, 0.7), inset 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 2px 10px rgba(60, 60, 60, 0.3), inset 0 -2px 10px rgba(60, 60, 60, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.7), 0 2px 5px rgba(240, 240, 240, 0.8), 2px 0 5px rgba(240, 240, 240, 0.8), 0 -2px 5px rgba(60, 60, 60, 0.4), -2px 0 5px rgba(60, 60, 60, 0.6);
+}
+.controller .center .group .btn:after {
+    transform: rotate(-45deg);
+    font-size: 10px;
+    margin-top: 50px;
+    margin-left: 5px;
+    color: #474747
+}
+.controller .center .group .btn.select:after {
+    content: "SELECT";
+
+}
+.controller .center .group .btn.start:after {
+    content: "START";
+
+}
+.btn:hover {
+    cursor: pointer;
+    filter: brightness(80%);
+}
+.to-press:hover {
+    transition: all 0.2s;
+}

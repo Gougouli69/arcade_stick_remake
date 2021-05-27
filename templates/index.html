@@ -5,56 +5,97 @@
 		<meta charset="utf-8">
 		<meta name="description" content="Boitier d'arcade virtuel pour le projet
 			borne d'arcade">
-		<meta name="author" content="Emmanuel Ruaud">
+		<meta name="author" content="MOSTACCI GREGORY">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="{{ url_for('static', filename='style/arcade.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style/controller.css') }}">
 	</head>
 	<body style="background: url('../static/img/snow_back.png')">
 		<h1 style="text-align: center;font-size: 30px">Snowball Party</h1>
 		<h2 style="text-align: center;" id="subtitle"></h2>
-		<div class="arcade-stick">
-			<div class="sidepanel">
-				<div id="led-display">
-				</div>
-				<div id="stick"></div>
-			</div>
-			<div>
-				<div class="btn-panel">
-					<div class="btn" style="left:20px;">
-						<div class="btn-wrap white">
-							<div class="btn-body white" data-action="select"><span>SELECT</span></div>
-						</div>
-					</div>
-					<div class="btn" style="left:140px;">
-						<div class="btn-wrap white">
-							<div class="btn-body white" data-action="start"><span>START</span></div>
-						</div>
-					</div>
-					<div class="btn" style="left:180px;top:120px;">
-						<div class="btn-wrap green">
-							<div class="btn-body green" data-action="green"><span>B</span></div>
-						</div>
-					</div>
-					<div class="btn" style="left:290px;top:35px;">
-						<div class="btn-wrap blue">
-							<div class="btn-body blue" data-action="blue"><span>H</span></div>
-						</div>
-					</div>
-					<div class="btn" style="left:280px;top:210px;">
-						<div class="btn-wrap yellow">
-							<div class="btn-body yellow" data-action="yellow"><span>N</span></div>
-						</div>
-					</div>
-					<div class="btn" style="left:395px;top:125px;">
-						<div class="btn-wrap red">
-							<div class="btn-body red" data-action="red"><span>J</span></div>
-						</div>
-					</div>
-				</div>
 
+<!--		<div class="arcade-stick">-->
+<!--			<div class="sidepanel">-->
+<!--				<div id="led-display">-->
+<!--				</div>-->
+<!--				<div id="stick"></div>-->
+<!--			</div>-->
+<!--			<div>-->
+<!--				<div class="btn-panel">-->
+<!--					<div class="btn" style="left:20px;">-->
+<!--						<div class="btn-wrap white">-->
+<!--							<div class="btn-body white" data-action="select"><span>SELECT</span></div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="btn" style="left:140px;">-->
+<!--						<div class="btn-wrap white">-->
+<!--							<div class="btn-body white" data-action="start"><span>START</span></div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="btn" style="left:180px;top:120px;">-->
+<!--						<div class="btn-wrap green">-->
+<!--							<div class="btn-body green" data-action="green"><span>B</span></div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="btn" style="left:290px;top:35px;">-->
+<!--						<div class="btn-wrap blue">-->
+<!--							<div class="btn-body blue" data-action="blue"><span>H</span></div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="btn" style="left:280px;top:210px;">-->
+<!--						<div class="btn-wrap yellow">-->
+<!--							<div class="btn-body yellow" data-action="yellow"><span>N</span></div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="btn" style="left:395px;top:125px;">-->
+<!--						<div class="btn-wrap red">-->
+<!--							<div class="btn-body red" data-action="red"><span>J</span></div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+
+<!--			</div>-->
+<!--		</div>-->
+		<main style="display: flex;justify-content: center;align-items: center">
+			<div class="controller">
+				<div class="part-controller left">
+					<div class="circle">
+						<div id="stick"></div>
+					</div>
+				</div>
+				<div class="center">
+					<div class="title">
+						SnowBallParty
+					</div>
+					<div class="group">
+						<button class="btn btn-body select" data-action="select"></button>
+						<button class="btn btn-body  start" data-action="start"></button>
+
+					</div>
+
+				</div>
+				<div class="part-controller right">
+					<div class="circle">
+						<div class="groups">
+							<div class="group group-1">
+								<button class="btn btn-body  to-press green" data-action="green"></button>
+								<button class="btn btn-body  to-press blue" data-action="blue"></button>
+							</div>
+							<div class="group group-2">
+								<button class="btn btn-body  to-press yellow" data-action="yellow"></button>
+								<button class="btn btn-body  to-press red" data-action="red"></button>
+							</div>
+						</div>
+
+					</div>
+				</div>
 			</div>
-		</div>
-		<h2 style="text-align: center;">Appuie sur START pour commencer !</h2>
+		</main>
+
+		<h2 style="text-align: center;margin-top: 150px">Appuie sur START pour commencer !</h2>
 		<script>
 			do {
 				var person = prompt("Entrer votre nom", "Joueur"+Math.floor(Math.random() * 100));
